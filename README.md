@@ -59,13 +59,13 @@ $ exit
 * Prepare base de prueba con:
 ``` sh
   cd spec/dummy
-  CLAVE_SIVEL2=miclave RAILS_ENV=test rake db:drop
-  CLAVE_SIVEL2=miclave RAILS_ENV=test rake db:setup
-  CLAVE_SIVEL2=miclave RAILS_ENV=test rake sivel2:indices
+  RAILS_ENV=test rake db:drop
+  RAILS_ENV=test rake db:setup
+  RAILS_ENV=test rake sivel2:indices
 ```
 * Ejecute las pruebas desde el directorio del motor con:
 ```sh
-  CLAVE_SIVEL2=miclave rspec
+  rspec
 ```
 
 ## Desarrollo
