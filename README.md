@@ -37,7 +37,7 @@ sistema la mayoría de estas, en adJ con:
 ```sh
   grep "^ *gem" Gemfile | sed -e "s/gem [\"']//g;s/[\"'].*//g" | xargs sudo NOKOGIRI_USE_SYSTEM_LIBRARIES=1 make=gmake gem install
 ```
-* Cree usuario para PostgreSQL (recomendado sivel2 o el que especifique en config/database.yml) 
+* Cree usuario para PostgreSQL (recomendado sivel2 o el que especifique en spec/dummy/config/database.yml) 
   y pongale una clave, por ejemplo en adJ
 ```sh
 sudo su - _postgresql
