@@ -4,7 +4,7 @@
         f.object.persona = Sip::Persona.new
        end %>
        
-    <%= render 'contacto_fields', :f => f %>
+    <%= render 'contacto_campos', :f => f %>
 
     <%= link_to_remove_association "Eliminar Víctima", f, 
       {:class => 'btn-danger', :'data-existing' => 'true'} %> 

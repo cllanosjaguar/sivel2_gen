@@ -1,4 +1,5 @@
 <%= f.simple_fields_for :persona do |p| %>
+  <% byebug %>
   <%= render 'sip/personas/persona_fields', :f => p %>
 <% end %>
 <%= f.association :profesion,
