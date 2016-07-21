@@ -9,6 +9,7 @@
 * [Desarrollo](#desarrollo)
 
 Este es un motor de SIVeL 2 que podrás incluir en tu desarrollo personalizado.
+Opera sobre Rails 4.2
 
 ## Diseño
 
