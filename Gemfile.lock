@@ -1,6 +1,7 @@
 GIT
   remote: git://github.com/pasosdeJesus/sip.git
-  revision: a4b9e0bab8be8844d06339b8841f7721a3873e5d
+  revision: 17170318128475025ab8db0491ede2e965720a96
+  branch: rails4
   specs:
     sip (2.0.a7)
       bootstrap-datepicker-rails
@@ -119,7 +120,7 @@ GEM
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     interception (0.5)
-    jbuilder (2.5.0)
+    jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jquery-rails (4.1.1)
@@ -299,7 +300,7 @@ DEPENDENCIES
   pg
   pry-rescue
   pry-stack_explorer
-  rails (~> 4.2.3.rc1)
+  rails (~> 4.2.7)
   rails-i18n
   rspec-rails
   sass

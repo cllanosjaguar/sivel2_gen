@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 #ruby "2.1.5"
 
 # Rails (internacionalización)
-gem "rails", '~> 4.2.3.rc1'
+gem "rails", '~> 4.2.7'
 gem "rails-i18n"
 
 # Problemas con arel 6.0.0 al ejecutar rspec
@@ -64,7 +64,7 @@ gem "tzinfo"
 gem "tzinfo-data"
 
 # Motor estilo Pasos de Jesús
-gem 'sip', github: 'pasosdeJesus/sip'
+gem 'sip', github: 'pasosdeJesus/sip', branch: 'rails4'
 #gem 'sip', path: '../sip'
 
 group :doc do

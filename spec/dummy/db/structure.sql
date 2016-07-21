@@ -194,6 +194,22 @@ CREATE SEQUENCE antecedente_seq
     CACHE 1;
 
 
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
 --
 -- Name: caso_etiqueta_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
@@ -229,10 +245,6 @@ CREATE SEQUENCE sivel2_gen_caso_id_seq
     NO MAXVALUE
     CACHE 1;
 
-
-SET default_tablespace = '';
-
-SET default_with_oids = false;
 
 --
 -- Name: sivel2_gen_caso; Type: TABLE; Schema: public; Owner: -
@@ -1751,6 +1763,40 @@ CREATE TABLE sivel2_gen_region (
 
 
 --
+-- Name: sivel2_gen_resagresion; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE sivel2_gen_resagresion (
+    id integer NOT NULL,
+    nombre character varying(500) NOT NULL,
+    observaciones character varying(5000),
+    fechacreacion date NOT NULL,
+    fechadeshabilitacion date,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: sivel2_gen_resagresion_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE sivel2_gen_resagresion_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sivel2_gen_resagresion_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE sivel2_gen_resagresion_id_seq OWNED BY sivel2_gen_resagresion.id;
+
+
+--
 -- Name: sivel2_gen_sectorsocial_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -1960,6 +2006,13 @@ ALTER TABLE ONLY sip_tdocumento ALTER COLUMN id SET DEFAULT nextval('sip_tdocume
 
 
 --
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_resagresion ALTER COLUMN id SET DEFAULT nextval('sivel2_gen_resagresion_id_seq'::regclass);
+
+
+--
 -- Name: actividadoficio_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2029,6 +2082,14 @@ ALTER TABLE ONLY sivel2_gen_antecedente
 
 ALTER TABLE ONLY sivel2_gen_antecedente_victima
     ADD CONSTRAINT antecedente_victima_pkey PRIMARY KEY (id_antecedente, id_persona, id_caso);
+
+
+--
+-- Name: ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
 
 
 --
@@ -2413,6 +2474,14 @@ ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
 
 ALTER TABLE ONLY sivel2_gen_caso_fuenteprensa
     ADD CONSTRAINT sivel2_gen_caso_fuenteprensa_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sivel2_gen_resagresion_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sivel2_gen_resagresion
+    ADD CONSTRAINT sivel2_gen_resagresion_pkey PRIMARY KEY (id);
 
 
 --
@@ -3567,4 +3636,8 @@ INSERT INTO schema_migrations (version) VALUES ('20160316100625');
 INSERT INTO schema_migrations (version) VALUES ('20160316100626');
 
 INSERT INTO schema_migrations (version) VALUES ('20160519195544');
+
+INSERT INTO schema_migrations (version) VALUES ('20160719195853');
+
+INSERT INTO schema_migrations (version) VALUES ('20160719214520');
 
